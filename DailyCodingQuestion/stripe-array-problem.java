@@ -4,6 +4,8 @@ Given an array of integers, find the first missing positive integer in linear ti
 For example, the input [3, 4, -1, 1] should give 2. The input [1, 2, 0] should give 3.
 
 You can modify the input array in-place.
+
+The time complexity of the algorithm is O(n), and the space complexity is O(1).
 */
 
 public class Main {
