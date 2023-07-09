@@ -18,20 +18,19 @@ Sample Output
 import java.util.*;
 
 class Program {
-
-  // O(nlogn) time | O(1) space - where n is the number of coins
+  // O(nlogn) time and | O(1) space
+  
   public int nonConstructibleChange(int[] coins) {
-    Arrays.sort(coins);
-
-    int currentChangeCreated = 0;
-    for (int coin : coins) {
-      if (coin > currentChangeCreated + 1) {
-        return currentChangeCreated + 1;
+    // Write your code here.
+    int currentChange = 0;   //to sum up the number of change we can currently create 
+    Arrays.sort(coins);      // sort the array in O(nlognn)
+    
+    for(int i=0;i<coins.length ; i++){  // if the next index is greater than what we can creats
+      if(currentChange+1 < coins[i]){   // by more than 1, then cuurentChange+1 can be made 
+        return currentChange+1;
       }
-
-      currentChangeCreated += coin;
+      currentChange = currentChange + coins[i];
     }
-
-    return currentChangeCreated + 1;
+    return currentChange+1;
   }
 }
